@@ -1,5 +1,5 @@
 module "vpc" {
-  source = "../modules/terraform-aws-vpc_v1.1"
+  source = "../modules/terraform-aws-vpc"
 
   name = "pcarey-vpc"
   cidr = "10.0.0.0/16"
