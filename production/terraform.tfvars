@@ -1,3 +1,3 @@
-environment=production
-owner=patrick
-project=snapshotdemo
+environment = "production"
+owner = "patrick"
+project = "snapshotdemo"
