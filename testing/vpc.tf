@@ -1,7 +1,7 @@
 module "vpc" {
   source = "../modules/terraform-aws-vpc"
 
-  name = "pcarey-vpc"
+  name = "pcarey-vpc-testing"
   cidr = "10.0.0.0/16"
 
   azs             = ["ap-southeast-2a", "ap-southeast-2b", "ap-southeast-2c"]
