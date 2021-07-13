@@ -2,7 +2,7 @@ module "ec2_cluster" {
   source                 = "../modules/terraform-aws-ec2-instance"
 
   name                   = "pcarey-cluster"
-  instance_count         = 1
+  instance_count         = 2
 
   ami                    = "ami-05064bb33b40c33a2"
   instance_type          = "t2.micro"
