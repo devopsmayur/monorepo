@@ -6,6 +6,6 @@ resource "tls_private_key" "this" {
 module "key_pair" {
   source = "../modules/terraform-aws-key-pair"
 
-  key_name   = "pcarey-one"
+  key_name   = "mayur-one"
   public_key = tls_private_key.this.public_key_openssh
 }
