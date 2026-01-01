@@ -14,7 +14,7 @@ provider "aws" {
   default_tags {   
     tags = {     
         Environment = var.environment
-        Owner       = va
+        Owner       = var.owner
         Project     = var.project
         Terraform   = var.terraform
     }
