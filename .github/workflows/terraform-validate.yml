@@ -9,19 +9,32 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dir:
+          - testing
+          - production
+
     steps:
       - uses: actions/checkout@v4
 
       - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_wrapper: false
 
-      - name: Terraform Init (no backend)
-        run: terraform init -backend=false
-        working-directory: testing
+      - name: Terraform Init (safe, local)
+        working-directory: ${{ matrix.dir }}
+        run: |
+          terraform init \
+            -backend=false \
+            -input=false \
+            -no-color \
+            -lock=false
 
       - name: Terraform Format Check
+        working-directory: ${{ matrix.dir }}
         run: terraform fmt -check -recursive
-        working-directory: testing
 
       - name: Terraform Validate
-        run: terraform validate
-        working-directory: testing
+        working-directory: ${{ matrix.dir }}
+        run: terraform validate -no-color
