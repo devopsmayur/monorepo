@@ -9,7 +9,7 @@ terraform {
 
 # Configure the AWS Provider and default tags
 provider "aws" {
-  region = "ap-southeast-2"
+  region =
   
   default_tags {   
     tags = {     
